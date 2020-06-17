@@ -31,10 +31,19 @@ public class Komunikaty {
     public void infomiasta(){
         System.out.println("Miasto nie zostało jeszcze kupione");
     }
+    public void infokolejki(){
+        System.out.println("Kolej możliwa do kupienia");
+    }
     public void zacheta_kupna(){
         System.out.println("Kupujesz? Y : N");
     }
     public void niemoznosc_kupna(){
         System.out.println("Niestety masz za mało pieniędzy, aby to kupić");
+    }
+    public void gotowka() {
+        System.out.println("Przeszedłeś przez start, otrzymujesz 400zł");
+    }
+    public void infoograczu(String imie) {
+        System.out.println("To miejsce należy do " + imie);
     }
 }

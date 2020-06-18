@@ -24,7 +24,19 @@ public class App {
 
         komunikaty.rozpoczecie();
         zaczynajacy = stan.losowanie_gracza(liczbagraczy);
-        komunikaty.info_o_zaczynajacym_graczu(gracze[zaczynajacy]);
-        stan.tura(gracze[zaczynajacy], plansza);
+        while(zaczynajacy != -1) {
+            komunikaty.info_o_zaczynajacym_graczu(gracze[zaczynajacy]);
+            stan.tura(gracze[zaczynajacy], plansza);
+            stan.koniectury(gracze[zaczynajacy]);
+            stan.zakonczeniegry();
+            if(zaczynajacy + 1 == liczbagraczy){
+                zaczynajacy = 0;
+            }
+            else if(zaczynajacy + 1 != liczbagraczy && zaczynajacy != -1) {
+                zaczynajacy++;
+            }
+        }
+        komunikaty.koniec();
+
     }
 }

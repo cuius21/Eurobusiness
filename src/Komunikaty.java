@@ -46,4 +46,16 @@ public class Komunikaty {
     public void infoograczu(String imie) {
         System.out.println("To miejsce należy do " + imie);
     }
+    public void koniectury(){
+        System.out.println("Czy to koniec tury? Y : N");
+    }
+    public void podsumowanie(){
+        System.out.println("Chcesz sprawdzic swój status? 1");
+        System.out.println("Chcesz sprawdzic rywali status? 2");
+        System.out.println("Chcesz sprawdzic swój i rywali status? 3");
+    }
+    public void koniec(){
+        System.out.println("");
+        System.out.println("---------------KONIEC GRY-------------");
+    }
 }

@@ -25,8 +25,47 @@ public class Stan {
         polozeniegracza = gracz.polozenie_gracza(wyrzuconaliczba, gracz);
         gracz.napotkanemiejsce(polozeniegracza, plansza);
         decyzjeGracza(gracz, polozeniegracza, plansza);
-
-
+    }
+    public void zakonczeniegry(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Czy chcesz wymusić zakończenie gry? Y : N");
+        String w = s.nextLine();
+        if(w.equals("Y") || w.equals("y")){
+            App.zaczynajacy = -1;
+        }
+    }
+    public void koniectury(Gracz gracz){
+        komunikaty.koniectury();
+        Scanner scan = new Scanner(System.in);
+        String yn = scan.nextLine();
+        if(yn.equals("N") || yn.equals("n")){
+            komunikaty.podsumowanie();
+            int podsumowanie = scan.nextInt();
+            if(podsumowanie == 1){
+                System.out.println("Twój status:");
+                System.out.println(gracz.imie + " posiada " + gracz.zakupione + " pól/pola");
+                System.out.println("Wybudował "+ gracz.wybudowane.size() + " budynków");
+                System.out.println("Twój dorobek "+ gracz.finanse+" zł");
+            }
+            else if(podsumowanie == 2){
+                System.out.println("Status rywali:");
+                for(int k=0; k<App.liczbagraczy; k++) {
+                    if(App.gracze[k] != gracz) {
+                        System.out.println(App.gracze[k].imie + " posiada " + App.gracze[k].zakupione + " pól/pola");
+                        System.out.println("Wybudował "+ App.gracze[k].wybudowane.size()+" budynków");
+                        System.out.println(App.gracze[k].imie + " ma "+ App.gracze[k].finanse+" zł");
+                    }
+                }
+            }
+            else if(podsumowanie == 3){
+                System.out.println("Status wszystkich:");
+                for (int k=0; k<App.liczbagraczy; k++){
+                    System.out.println(App.gracze[k].imie + " posiada " + App.gracze[k].zakupione + " pól/pola");
+                    System.out.println("Wybudował "+ App.gracze[k].wybudowane.size()+" budynków");
+                    System.out.println(App.gracze[k].imie + " ma "+ App.gracze[k].finanse+" zł");
+                }
+            }
+        }
     }
     public void decyzjeGracza(Gracz g, int polozenie, Plansza plansza){
         int tmp;

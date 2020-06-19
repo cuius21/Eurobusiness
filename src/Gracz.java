@@ -32,6 +32,11 @@ public class Gracz {
     public void napotkanemiejsce(int miejsce, Plansza plansza) {
         plansza.miejsceGracza(miejsce);
     }
-    public void kupno_miejsca(int polozenie_miejsca){
+
+    public void kupno_zabudowy(){
+        System.out.println("Kupiłeś do tej pory pola");
+        System.out.println(zakupione + " ");
+        System.out.println("Domki");
+        System.out.println(wybudowane + " ");
     }
 }

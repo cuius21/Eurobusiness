@@ -261,197 +261,90 @@ public class Plansza {
         }
     }
     }
+    public int rozpoznanieMiejsca(boolean miejsce, int koszt){
+        if(!(miejsce)) {
+            komunikaty.infomiasta();
+            System.out.println("Cena: "+koszt);
+            komunikaty.zacheta_kupna();
+            wybor = scanner.nextLine();
+            while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
+                System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
+                wybor = scanner.nextLine();
+            }
+            if (wybor.equals("y") || wybor.equals("Y")) {
+                miejsce = true;
+                return koszt;
+            }
+            return 5000000;
+        }
+        else {
+            return 1000000;
+        }
+    }
     public int statusMiejsca(int id_miejsca) {
-        if (id_miejsca == 0) {
-            return 1;
-        } else if (id_miejsca == 1) {
-            if (!(greckie[0].kupione)) {
-                komunikaty.infomiasta();
-                System.out.println("Cena: " + greckie[0].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if (wybor.equals("y") || wybor.equals("Y")) {
-                    greckie[0].kupione = true;
-                    return greckie[0].koszt;
-                }
-            }
-            else{
-                return 1000000;
-            }
-        }
-        else if (id_miejsca == 3) {
-            if (!(greckie[1].kupione)) {
-                komunikaty.infomiasta();
-                System.out.println("Cena: " + greckie[1].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if (wybor.equals("y") || wybor.equals("Y")) {
-                    greckie[1].kupione = true;
-                    return greckie[1].koszt;
-                }
-            }
-            else{
-                return 1000000;
-            }
-        }
-        else if(id_miejsca == 5) {
-            if(!(kolejki[0].kupione)) {
-                komunikaty.infokolejki();
-                System.out.println("Cena: " + kolejki[0].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if(wybor.equals("y") || wybor.equals("Y")) {
-                    kolejki[0].kupione = true;
-                    return kolejki[0].koszt;
-                }
-            } else {
-                return 1000000;
-            }
-        }
-        else if (id_miejsca == 6) {
-            if (!(wloskie[0].kupione)) {
-                komunikaty.infomiasta();
-                System.out.println("Cena: " + wloskie[0].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if (wybor.equals("y") || wybor.equals("Y")) {
-                    wloskie[0].kupione = true;
-                    return wloskie[0].koszt;
-                }
-            }
-            else{
-                return 1000000;
-            }
-        }
-        else if (id_miejsca == 8) {
-            if (!(wloskie[1].kupione)) {
-                komunikaty.infomiasta();
-                System.out.println("Cena: " + wloskie[1].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if (wybor.equals("y") || wybor.equals("Y")) {
-                    wloskie[1].kupione = true;
-                    return wloskie[1].koszt;
-                }
-            }
-            else{
-                return 1000000;
-            }
-        }
-        else if (id_miejsca == 9) {
-            if (!(wloskie[2].kupione)) {
-                komunikaty.infomiasta();
-                System.out.println("Cena: " + wloskie[2].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if (wybor.equals("y") || wybor.equals("Y")) {
-                    wloskie[2].kupione = true;
-                    return wloskie[2].koszt;
-                }
-            }
-            else{
-                return 1000000;
-            }
-        }
-        else if (id_miejsca == 11) {
-            if (!(hiszpanskie[0].kupione)) {
-                komunikaty.infomiasta();
-                System.out.println("Cena: " + hiszpanskie[0].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if (wybor.equals("y") || wybor.equals("Y")) {
-                    hiszpanskie[0].kupione = true;
-                    return hiszpanskie[0].koszt;
-                }
-            }
-            else{
-                return 1000000;
-            }
-        }
-        else if (id_miejsca == 13) {
-            if (!(hiszpanskie[1].kupione)) {
-                komunikaty.infomiasta();
-                System.out.println("Cena: " + hiszpanskie[1].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if (wybor.equals("y") || wybor.equals("Y")) {
-                    hiszpanskie[1].kupione = true;
-                    return hiszpanskie[1].koszt;
-                }
-            }
-            else{
-                return 1000000;
-            }
-        }
-        else if (id_miejsca == 14) {
-            if (!(hiszpanskie[2].kupione)) {
-                komunikaty.infomiasta();
-                System.out.println("Cena: " + hiszpanskie[2].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if (wybor.equals("y") || wybor.equals("Y")) {
-                    hiszpanskie[2].kupione = true;
-                    return hiszpanskie[2].koszt;
-                }
-            }
-            else{
-                return 1000000;
-            }
-        }
-        else if (id_miejsca == 16) {
-            if (!(brytyjskie[0].kupione)) {
-                komunikaty.infomiasta();
-                System.out.println("Cena: " + brytyjskie[0].koszt);
-                komunikaty.zacheta_kupna();
-                wybor = scanner.nextLine();
-                while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
-                    System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
-                    wybor = scanner.nextLine();
-                }
-                if (wybor.equals("y") || wybor.equals("Y")) {
-                    brytyjskie[0].kupione = true;
-                    return brytyjskie[0].koszt;
-                }
-            }
-            else{
-                return 1000000;
-            }
+        switch (id_miejsca) {
+            case 0:
+                return 1;
+            case 1:
+                return rozpoznanieMiejsca(greckie[0].kupione, greckie[0].koszt);
+            case 3:
+                return rozpoznanieMiejsca(greckie[1].kupione, greckie[1].koszt);
+            case 5:
+                return rozpoznanieMiejsca(kolejki[0].kupione, kolejki[0].koszt);
+            case 6:
+                return rozpoznanieMiejsca(wloskie[0].kupione, wloskie[0].koszt);
+            case 8:
+                return rozpoznanieMiejsca(wloskie[1].kupione, wloskie[1].koszt);
+                
+            case 9:
+                return rozpoznanieMiejsca(wloskie[2].kupione, wloskie[2].koszt);
+            case 10:
+                return 1;
+            case 11:
+                return rozpoznanieMiejsca(hiszpanskie[0].kupione, hiszpanskie[0].koszt);
+            case 12:
+                return rozpoznanieMiejsca(infrastruktury[0].kupione, infrastruktury[0].koszt);
+            case 13:
+                return rozpoznanieMiejsca(hiszpanskie[1].kupione, hiszpanskie[1].koszt);
+            case 14:
+                return rozpoznanieMiejsca(hiszpanskie[2].kupione, hiszpanskie[2].koszt);
+            case 15:
+                return rozpoznanieMiejsca(kolejki[1].kupione, kolejki[1].koszt);
+            case 16:
+                return rozpoznanieMiejsca(brytyjskie[0].kupione, brytyjskie[0].koszt);
+            case 18:
+                return rozpoznanieMiejsca(brytyjskie[1].kupione, brytyjskie[1].koszt);
+            case 19:
+                return rozpoznanieMiejsca(brytyjskie[2].kupione, brytyjskie[2].koszt);
+            case 21:
+                return rozpoznanieMiejsca(beneluxu[0].kupione, beneluxu[0].koszt);
+            case 23:
+                return rozpoznanieMiejsca(beneluxu[1].kupione, beneluxu[1].koszt);
+            case 24:
+                return rozpoznanieMiejsca(beneluxu[2].kupione, beneluxu[2].koszt);
+            case 25:
+                return rozpoznanieMiejsca(kolejki[2].kupione, kolejki[2].koszt);
+            case 26:
+                return rozpoznanieMiejsca(szwedzkie[0].kupione, szwedzkie[0].koszt);
+            case 27:
+                return rozpoznanieMiejsca(szwedzkie[1].kupione, szwedzkie[1].koszt);
+            case 28:
+                return rozpoznanieMiejsca(infrastruktury[1].kupione, infrastruktury[2].koszt);
+            case 29:
+                return rozpoznanieMiejsca(szwedzkie[2].kupione, szwedzkie[2].koszt);
+            case 31:
+                return rozpoznanieMiejsca(niemieckie[0].kupione, niemieckie[0].koszt);
+            case 32:
+                return rozpoznanieMiejsca(niemieckie[1].kupione, niemieckie[1].koszt);
+            case 34:
+                return rozpoznanieMiejsca(niemieckie[2].kupione, niemieckie[2].koszt);
+            case 35:
+                return rozpoznanieMiejsca(kolejki[3].kupione, kolejki[3].koszt);
+            case 37:
+                return rozpoznanieMiejsca(austriackie[0].kupione, austriackie[0].koszt);
+            case 39:
+                return rozpoznanieMiejsca(austriackie[1].kupione, austriackie[1].koszt);
+                
         }
         return 0;
     }
@@ -535,7 +428,7 @@ public class Plansza {
             System.out.println("Saloniki");
         }
         else if(nr_miejsca == 2){
-            pytajniki[0].tresc("Nie stawiłeś się rano w pracy. Płacisz 100zł");
+            System.out.println(pytajniki[0].tresc("Nie stawiłeś się rano w pracy. Płacisz 100zł"));
         }
         else if(nr_miejsca == 3){
             System.out.println("Ateny");
@@ -550,7 +443,7 @@ public class Plansza {
             System.out.println(wloskie[0].name);
         }
         else if(nr_miejsca == 7){
-            pytajniki[1].tresc("Dobrze obstawiłeś, wygrywasz 100zł");
+            System.out.println(pytajniki[1].tresc("Dobrze obstawiłeś, wygrywasz 100zł"));
         }
         else if(nr_miejsca == 8){
             System.out.println(wloskie[1].name);
@@ -580,7 +473,7 @@ public class Plansza {
             System.out.println(brytyjskie[0].name);
         }
         else if(nr_miejsca == 17){
-            pytajniki[2].tresc("Niestety za szybko jechałeś. Płacisz 50zł");
+            System.out.println(pytajniki[2].tresc("Niestety za szybko jechałeś. Płacisz 50zł"));
         }
         else if(nr_miejsca == 18){
             System.out.println(brytyjskie[1].name);
@@ -595,7 +488,7 @@ public class Plansza {
             System.out.println(beneluxu[0].name);
         }
         else if(nr_miejsca == 22){
-            pytajniki[3].tresc("Masz urodziny, od każdego gracza otrzymujesz 20zł");
+            System.out.println(pytajniki[3].tresc("Masz urodziny, od każdego gracza otrzymujesz 20zł"));
         }
         else if(nr_miejsca == 23){
             System.out.println(beneluxu[1].name);
@@ -628,7 +521,7 @@ public class Plansza {
             System.out.println(niemieckie[1].name);
         }
         else if(nr_miejsca == 33){
-            pytajniki[4].tresc("Placisz za każdy dom 20zł za każdy hotel 50zł");
+            System.out.println(pytajniki[4].tresc("Placisz za każdy dom 20zł za każdy hotel 50zł"));
         }
         else if(nr_miejsca == 34){
             System.out.println(niemieckie[2].name);
@@ -637,7 +530,7 @@ public class Plansza {
             System.out.println(kolejki[3].nazwa);
         }
         else if(nr_miejsca == 36){
-            pytajniki[5].tresc("Przenosisz się na START");
+            System.out.println(pytajniki[5].tresc("Przenosisz się na START"));
         }
         else if(nr_miejsca == 37){
             System.out.println(austriackie[0].name);

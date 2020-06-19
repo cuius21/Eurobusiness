@@ -31,9 +31,6 @@ public class Komunikaty {
     public void infomiasta(){
         System.out.println("Miasto nie zostało jeszcze kupione");
     }
-    public void infokolejki(){
-        System.out.println("Kolej możliwa do kupienia");
-    }
     public void zacheta_kupna(){
         System.out.println("Kupujesz? Y : N");
     }
@@ -53,6 +50,7 @@ public class Komunikaty {
         System.out.println("Chcesz sprawdzic swój status? 1");
         System.out.println("Chcesz sprawdzic rywali status? 2");
         System.out.println("Chcesz sprawdzic swój i rywali status? 3");
+        System.out.println("Chcesz kupić domy? 4");
     }
     public void koniec(){
         System.out.println("");

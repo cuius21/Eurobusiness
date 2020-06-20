@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -28,9 +29,9 @@ public class Stan {
     }
     public void zakonczeniegry(){
         Scanner s = new Scanner(System.in);
-        System.out.println("Czy chcesz wymusić zakończenie gry? Y : N");
+        System.out.println("Czy chcesz wymusić zakończenie gry? T : N");
         String w = s.nextLine();
-        if(w.equals("Y") || w.equals("y")){
+        if(w.equals("T") || w.equals("t")){
             App.zaczynajacy = -1;
         }
     }
@@ -65,14 +66,16 @@ public class Stan {
             }
             else if(podsumowanie == 4){
                 gracz.kupno_zabudowy();
+                gracz.posiadlosc_kraj();
             }
         }
     }
     public void statusgraczy(int k){
-        System.out.println(App.gracze[k].imie + " posiada " + App.gracze[k].zakupione + " pól/pola");
+        System.out.println(App.gracze[k].imie + " posiada " + App.gracze[k].nazwypolkup);
         System.out.println("Wybudował "+ App.gracze[k].wybudowane.size()+" budynków");
         System.out.println(App.gracze[k].imie + " ma "+ App.gracze[k].finanse+" zł");
     }
+
     public void decyzjeGracza(Gracz g, int polozenie, Plansza plansza){
         int tmp;
         switch (polozenie) {
@@ -84,9 +87,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(1);
+                    g.nazwypolkup.add("Saloniki");
+                    plansza.zmianaStatusuPola(1);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(1);
                 }
                 else if(tmp == 1000000) {
                     tmpdla2(g,polozenie, 3, "Saloniki", 10);
@@ -108,9 +112,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(3);
+                    g.nazwypolkup.add("Ateny");
+                    plansza.zmianaStatusuPola(3);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(3);
                 }
                 else if(tmp == 1000000) {
                     tmpdla2(g, polozenie, 1, "Ateny", 15);
@@ -126,9 +131,10 @@ public class Stan {
                 if(g.finanse > tmp) {
                     g.finanse -= tmp;
                     g.zakupione.add(5);
+                    g.nazwypolkup.add("kolej poludniowa");
+                    plansza.zmianaStatusuPola(5);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(5);
                 }else if(tmp == 1000000){
                     tmpdlakolei(g, polozenie, 15, 25, 35);
                 }
@@ -138,9 +144,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(6);
+                    g.nazwypolkup.add("Neapol");
+                    plansza.zmianaStatusuPola(6);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(6);
                 }else if(tmp == 1000000) {
                     tmpdla3(g, polozenie, 8,9,"Neapol", 20);
                 }
@@ -153,9 +160,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(8);
+                    g.nazwypolkup.add("Mediolan");
+                    plansza.zmianaStatusuPola(8);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(8);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 6,9,"Mediolan", 20);
                 }
@@ -165,9 +173,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(9);
+                    g.nazwypolkup.add("Rzym");
+                    plansza.zmianaStatusuPola(9);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(9);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 6,8,"Rzym", 25);
                 }
@@ -180,9 +189,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(11);
+                    g.nazwypolkup.add("Barcelona");
+                    plansza.zmianaStatusuPola(11);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(11);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 13,14,"Barcelona", 35);
                 }
@@ -192,9 +202,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(12);
+                    g.nazwypolkup.add("elektrownia");
+                    plansza.zmianaStatusuPola(12);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)) {
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(12);
                 }else if(tmp == 1000000){
                     tmpdlainfrastruktury(g, polozenie, 28);
                 }
@@ -204,9 +215,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(13);
+                    g.nazwypolkup.add("Sewilla");
+                    plansza.zmianaStatusuPola(13);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(13);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 11,14,"Sewilla", 35);
                 }
@@ -216,9 +228,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(14);
+                    g.nazwypolkup.add("Madryt");
+                    plansza.zmianaStatusuPola(14);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(14);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 13,11,"Madryt", 45);
                 }
@@ -228,9 +241,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(1);
+                    g.nazwypolkup.add("kolej zachodnia");
+                    plansza.zmianaStatusuPola(15);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(15);
                 }else if(tmp == 1000000){
                     tmpdlakolei(g, polozenie, 5, 25, 35);
                 }
@@ -240,9 +254,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(16);
+                    g.nazwypolkup.add("Liverpool");
+                    plansza.zmianaStatusuPola(16);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(16);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 18,19,"Liverpool", 55);
                 }
@@ -253,6 +268,7 @@ public class Stan {
                 }
                 else{
                     System.out.println("koniec gry");
+                    App.zaczynajacy = -1;
                 }
                 break;
             case 18:
@@ -260,9 +276,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(18);
+                    g.nazwypolkup.add("Glasgow");
+                    plansza.zmianaStatusuPola(18);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(18);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 16,19,"Glasgow", 55);
                 }
@@ -272,9 +289,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(19);
+                    g.nazwypolkup.add("Londyn");
+                    plansza.zmianaStatusuPola(19);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(19);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 18,16,"Londyn", 60);
                 }
@@ -290,9 +308,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(21);
+                    g.nazwypolkup.add("Rotterdam");
+                    plansza.zmianaStatusuPola(21);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(21);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 23,24,"Rotterdam", 80);
                 }
@@ -310,9 +329,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(23);
+                    g.nazwypolkup.add("Bruksela");
+                    plansza.zmianaStatusuPola(23);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(23);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 21,24,"Bruksela", 80);
                 }
@@ -322,9 +342,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(24);
+                    g.nazwypolkup.add("Amsterdam");
+                    plansza.zmianaStatusuPola(24);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(24);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 21,23,"Amsterdam", 100);
                 }
@@ -334,9 +355,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(25);
+                    g.nazwypolkup.add("kolej polnocna");
+                    plansza.zmianaStatusuPola(25);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(25);
                 }else if(tmp == 1000000){
                     tmpdlakolei(g, polozenie, 5, 15, 35);
                 }
@@ -346,9 +368,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(26);
+                    g.nazwypolkup.add("Malmo");
+                    plansza.zmianaStatusuPola(26);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(26);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 27,29,"Malmo", 110);
                 }
@@ -358,9 +381,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(27);
+                    g.nazwypolkup.add("Goteborg");
+                    plansza.zmianaStatusuPola(27);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(27);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 26,29,"Goteborg", 110);
                 }
@@ -370,9 +394,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(28);
+                    g.nazwypolkup.add("wodociagi");
+                    plansza.zmianaStatusuPola(28);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)) {
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(28);
                 }else if(tmp == 1000000){
                     tmpdlainfrastruktury(g, polozenie, 12);
                 }
@@ -382,9 +407,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(29);
+                    g.nazwypolkup.add("Sztokholm");
+                    plansza.zmianaStatusuPola(29);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(29);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 26,27,"Sztokholm", 140);
                 }
@@ -398,9 +424,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(31);
+                    g.nazwypolkup.add("Frankfurt");
+                    plansza.zmianaStatusuPola(31);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(31);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 32,34,"Frankfurt", 150);
                 }
@@ -410,9 +437,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(32);
+                    g.nazwypolkup.add("Kolonia");
+                    plansza.zmianaStatusuPola(32);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(32);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 32,34,"Kolonia", 150);
                 }
@@ -425,19 +453,26 @@ public class Stan {
                 ilosc_hoteli = ilosc / 5;
                 ilosc_domow = ilosc - ilosc_hoteli;
                 koszt = ilosc_hoteli * 50 + ilosc_domow * 20;
-                g.finanse -= koszt;
-                plansza.skarbiec +=koszt;
-                System.out.println("Zapłaciłeś " + koszt + " zł.");
-                System.out.println("Pieniądze trafiły do skarbca");
+                if(g.finanse > koszt) {
+                    g.finanse -= koszt;
+                    plansza.skarbiec += koszt;
+                    System.out.println("Zapłaciłeś " + koszt + " zł.");
+                    System.out.println("Pieniądze trafiły do skarbca");
+                }
+                else{
+                    System.out.println("Koniec gry");
+                    App.zaczynajacy = -1;
+                }
                 break;
             case 34:
                 tmp = plansza.statusMiejsca(34);
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(34);
+                    g.nazwypolkup.add("Berlin");
+                    plansza.zmianaStatusuPola(34);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(34);
                 }else if(tmp == 1000000){
                     tmpdla3(g, polozenie, 32,31,"Berlin", 200);
                 }
@@ -447,9 +482,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(35);
+                    g.nazwypolkup.add("kolej wschodnia");
+                    plansza.zmianaStatusuPola(35);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(35);
                 }else if(tmp == 1000000){
                     tmpdlakolei(g, polozenie, 5, 15, 25);
                 }
@@ -462,9 +498,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(37);
+                    g.nazwypolkup.add("Insbruk");
+                    plansza.zmianaStatusuPola(37);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(37);
                 }
                 else if(tmp == 1000000) {
                     tmpdla2(g,polozenie, 39, "Insbruk", 300);
@@ -486,9 +523,10 @@ public class Stan {
                 if(g.finanse > tmp){
                     g.finanse = g.finanse - tmp;
                     g.zakupione.add(39);
+                    g.nazwypolkup.add("Wieden");
+                    plansza.zmianaStatusuPola(39);
                 }else if((g.finanse < tmp) && (tmp != 1000000) && (tmp != 5000000)){
                     komunikaty.niemoznosc_kupna();
-                    plansza.zmianaStatusuPola(39);
                 }
                 else if(tmp == 1000000) {
                     tmpdla2(g,polozenie, 37, "Wieden", 400);
@@ -559,11 +597,7 @@ public class Stan {
             if((App.gracze[i] != g) && App.gracze[i].zakupione.contains(id)){
                 komunikaty.infoograczu(App.gracze[i].imie);
                 if(App.gracze[i].zakupione.contains(id2)){
-                    int ilosc = 0;
-                    for(int j=0; j<App.gracze[i].wybudowane.size(); j++){
-                        if(App.gracze[i].wybudowane.equals(nazwa)){
-                            ilosc++;
-                        }
+                    int ilosc = Collections.frequency(App.gracze[i].wybudowane, nazwa);
                         if(ilosc == 0){
                             System.out.println("Gracz nie ma żadnych budynków tutaj");
                             System.out.println("Płacisz graczowi "+ dom + "zł");
@@ -635,7 +669,6 @@ public class Stan {
                                 App.zaczynajacy = -1;
                             }
                         }
-                    }
                 }else{
                     System.out.println("Płacisz za teren niezabudowany "+dom+"zł");
                     App.gracze[i].finanse += dom;
@@ -655,11 +688,7 @@ public class Stan {
             if ((App.gracze[i] != g) && App.gracze[i].zakupione.contains(id)) {
                 komunikaty.infoograczu(App.gracze[i].imie);
                 if (App.gracze[i].zakupione.contains(id2) && App.gracze[i].zakupione.contains(id3)) {
-                    int ilosc = 0;
-                    for (int j = 0; j < App.gracze[i].wybudowane.size(); j++) {
-                        if (App.gracze[i].wybudowane.equals(nazwa)) {
-                            ilosc++;
-                        }
+                    int ilosc = Collections.frequency(App.gracze[i].wybudowane, nazwa);
                         if (ilosc == 0) {
                             System.out.println("Gracz nie ma żadnych budynków tutaj");
                             System.out.println("Płacisz graczowi " + dom + "zł");
@@ -721,7 +750,6 @@ public class Stan {
                                 App.zaczynajacy = -1;
                             }
                         }
-                    }
                 } else {
                     System.out.println("Płacisz za teren niezabudowany " + dom + "zł");
                     App.gracze[i].finanse += dom;

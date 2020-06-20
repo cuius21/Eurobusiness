@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9cad240c-dbfe-46a3-bcd3-8a1f1081ff1c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Eurobussiness/Gracz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Eurobussiness/Gracz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Eurobussiness/Plansza.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Eurobussiness/Plansza.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gracz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gracz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Komunikaty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Komunikaty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miasto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miasto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panstwo.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Plansza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plansza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Stan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stan.java" afterDir="false" />
     </list>
@@ -76,6 +80,7 @@
       <workItem from="1592470060359" duration="4024000" />
       <workItem from="1592490260622" duration="1750000" />
       <workItem from="1592571994432" duration="15313000" />
+      <workItem from="1592659177342" duration="28227000" />
     </task>
     <servers />
   </component>
@@ -83,6 +88,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Inspections" timestamp="1592690936379">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1592690936379" />
     <state x="361" y="71" key="#Project_Structure" timestamp="1592250240054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -95,26 +104,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592309956069" />
-    <state width="1493" height="148" key="GridCell.Tab.0.bottom" timestamp="1592590945495">
+    <state width="1493" height="551" key="GridCell.Tab.0.bottom" timestamp="1592696929403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="148" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592590945495" />
-    <state width="1493" height="148" key="GridCell.Tab.0.center" timestamp="1592590945495">
+    <state width="1493" height="551" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592696929403" />
+    <state width="1493" height="551" key="GridCell.Tab.0.center" timestamp="1592696929403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="148" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592590945495" />
-    <state width="1493" height="148" key="GridCell.Tab.0.left" timestamp="1592590945495">
+    <state width="1493" height="551" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592696929403" />
+    <state width="1493" height="551" key="GridCell.Tab.0.left" timestamp="1592696929403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="148" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592590945495" />
-    <state width="1493" height="148" key="GridCell.Tab.0.right" timestamp="1592590945495">
+    <state width="1493" height="551" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592696929403" />
+    <state width="1493" height="551" key="GridCell.Tab.0.right" timestamp="1592696929403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="148" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592590945495" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1592572341188">
+    <state width="1493" height="551" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592696929403" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1592659217895">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592572341188" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592659217895" />
+    <state x="499" y="178" key="extract.method.dialog" timestamp="1592672652349">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="178" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1592672652349" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

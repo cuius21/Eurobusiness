@@ -3,8 +3,7 @@ public class Miasto {
     public String name;
     public int koszt;
     public boolean kupione = false;
-    public int[] domy = new int[4];
-    public int hotel = 0;
+
 
     public void setId(int id) {
         this.id = id;
@@ -22,14 +21,6 @@ public class Miasto {
         this.kupione = kupione;
     }
 
-    public void setDomy(int[] domy) {
-        this.domy = domy;
-    }
-
-    public void setHotel(int hotel) {
-        this.hotel = hotel;
-    }
-
     public int getId() {
         return id;
     }
@@ -44,13 +35,5 @@ public class Miasto {
 
     public boolean isKupione() {
         return kupione;
-    }
-
-    public int[] getDomy() {
-        return domy;
-    }
-
-    public int getHotel() {
-        return hotel;
     }
 }

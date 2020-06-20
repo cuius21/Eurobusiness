@@ -12,7 +12,6 @@ public class Plansza {
 
 
     Komunikaty komunikaty = new Komunikaty();
-    Panstwo []panstwa = new Panstwo[8];
     Miasto []greckie = new Miasto[2];
     Miasto []wloskie = new Miasto[3];
     Miasto []hiszpanskie = new Miasto[3];
@@ -42,17 +41,13 @@ public class Plansza {
         }
 
         for(i=0; i<8; i++){
-            panstwa[i] = new Panstwo();
-
             if(i == 0){
-                panstwa[i].name = "Grecja";
                 greckie[0].name = "Ateny";
                 greckie[0].koszt = 120;
                 greckie[1].name = "Saloniki";
                 greckie[1].koszt = 120;
             }
             if(i == 1){
-                panstwa[i].name = "Wlochy";
                 wloskie[0].name = "Neapol";
                 wloskie[0].koszt = 200;
                 wloskie[1].name = "Mediolan";
@@ -61,7 +56,6 @@ public class Plansza {
                 wloskie[2].koszt = 240;
             }
             if(i == 2){
-                panstwa[i].name = "Hiszpania";
                 hiszpanskie[0].name = "Barcelona";
                 hiszpanskie[0].koszt = 250;
                 hiszpanskie[1].name = "Sewilla";
@@ -70,7 +64,6 @@ public class Plansza {
                 hiszpanskie[2].koszt = 280;
             }
             if(i == 3){
-                panstwa[i].name = "Wielka Brytania";
                 brytyjskie[0].name = "Liverpool";
                 brytyjskie[0].koszt = 350;
                 brytyjskie[1].name = "Glasgow";
@@ -79,7 +72,6 @@ public class Plansza {
                 brytyjskie[2].koszt = 400;
             }
             if(i == 4){
-                panstwa[i].name = "Benelux";
                 beneluxu[0].name = "Rotterdam";
                 beneluxu[0].koszt = 440;
                 beneluxu[1].name = "Bruksela";
@@ -88,7 +80,6 @@ public class Plansza {
                 beneluxu[2].koszt = 490;
             }
             if(i == 5){
-                panstwa[i].name = "Szwecja";
                 szwedzkie[0].name = "Malmo";
                 szwedzkie[0].koszt = 520;
                 szwedzkie[1].name = "Goteborg";
@@ -97,7 +88,6 @@ public class Plansza {
                 szwedzkie[2].koszt = 580;
             }
             if(i == 6){
-                panstwa[i].name = "Niemcy";
                 niemieckie[0].name = "Frankfurt";
                 niemieckie[0].koszt = 600;
                 niemieckie[1].name = "Kolonia";
@@ -106,7 +96,6 @@ public class Plansza {
                 niemieckie[2].koszt = 650;
             }
             if(i == 7){
-                panstwa[i].name = "Austria";
                 austriackie[0].name = "Insbruk";
                 austriackie[0].koszt = 700;
                 austriackie[1].name = "Wieden";
@@ -264,15 +253,14 @@ public class Plansza {
     public int rozpoznanieMiejsca(boolean miejsce, int koszt){
         if(!(miejsce)) {
             komunikaty.infomiasta();
-            System.out.println("Cena: "+koszt);
+            System.out.println("Cena: "+koszt+" zł");
             komunikaty.zacheta_kupna();
             wybor = scanner.nextLine();
-            while (!((wybor.equals("y")) || (wybor.equals("Y")) || (wybor.equals("n")) || (wybor.equals("N")))) {
+            while (!((wybor.equals("t")) || (wybor.equals("T")) || (wybor.equals("n")) || (wybor.equals("N")))) {
                 System.out.println("Chyba nie podałeś poprawnie akcji jaką wykonać, spróbuj ponownie");
                 wybor = scanner.nextLine();
             }
-            if (wybor.equals("y") || wybor.equals("Y")) {
-                miejsce = true;
+            if (wybor.equals("t") || wybor.equals("T")) {
                 return koszt;
             }
             return 5000000;
@@ -329,7 +317,7 @@ public class Plansza {
             case 27:
                 return rozpoznanieMiejsca(szwedzkie[1].kupione, szwedzkie[1].koszt);
             case 28:
-                return rozpoznanieMiejsca(infrastruktury[1].kupione, infrastruktury[2].koszt);
+                return rozpoznanieMiejsca(infrastruktury[1].kupione, infrastruktury[1].koszt);
             case 29:
                 return rozpoznanieMiejsca(szwedzkie[2].kupione, szwedzkie[2].koszt);
             case 31:
@@ -350,73 +338,79 @@ public class Plansza {
     }
     public void zmianaStatusuPola(int x){
         if(x == 1){
-            greckie[0].kupione = false;
+            greckie[0].kupione = true;
         }
         else if(x == 3){
-            greckie[1].kupione = false;
+            greckie[1].kupione = true;
         }
         else if(x == 5){
-            kolejki[0].kupione = false;
+            kolejki[0].kupione = true;
         }
         else if(x == 6){
-            wloskie[0].kupione = false;
+            wloskie[0].kupione = true;
         }
         else if(x == 8){
-            wloskie[1].kupione = false;
+            wloskie[1].kupione = true;
         }
         else if(x == 9){
-            wloskie[2].kupione = false;
+            wloskie[2].kupione = true;
         }
         else if(x == 11){
-            hiszpanskie[0].kupione = false;
+            hiszpanskie[0].kupione = true;
+        }
+        else if(x ==12){
+            infrastruktury[0].kupione = true;
         }
         else if(x == 13){
-            hiszpanskie[1].kupione = false;
+            hiszpanskie[1].kupione = true;
         }
         else if(x == 14){
-            hiszpanskie[2].kupione = false;
+            hiszpanskie[2].kupione = true;
         }
         else if(x == 16){
-            brytyjskie[0].kupione = false;
+            brytyjskie[0].kupione = true;
         }
         else if(x == 18){
-            brytyjskie[1].kupione = false;
+            brytyjskie[1].kupione = true;
         }
         else if(x == 19){
-            brytyjskie[2].kupione = false;
+            brytyjskie[2].kupione = true;
         }
         else if(x == 21){
-            beneluxu[0].kupione = false;
+            beneluxu[0].kupione = true;
         }
         else if(x == 23){
-            beneluxu[1].kupione = false;
+            beneluxu[1].kupione = true;
         }
         else if(x == 24){
-            beneluxu[2].kupione = false;
+            beneluxu[2].kupione = true;
         }
         else if(x == 26){
-            szwedzkie[0].kupione = false;
+            szwedzkie[0].kupione = true;
         }
         else if(x == 27){
-            szwedzkie[1].kupione = false;
+            szwedzkie[1].kupione = true;
+        }
+        else if(x == 28){
+            infrastruktury[1].kupione = true;
         }
         else if(x == 29){
-            szwedzkie[2].kupione = false;
+            szwedzkie[2].kupione = true;
         }
         else if(x == 31){
-            niemieckie[0].kupione = false;
+            niemieckie[0].kupione = true;
         }
         else if(x == 32){
-            niemieckie[1].kupione = false;
+            niemieckie[1].kupione = true;
         }
         else if(x == 34){
-            niemieckie[2].kupione = false;
+            niemieckie[2].kupione = true;
         }
         else if(x == 37){
-            austriackie[0].kupione = false;
+            austriackie[0].kupione = true;
         }
         else if(x == 39){
-            austriackie[1].kupione = false;
+            austriackie[1].kupione = true;
         }
     }
 

@@ -538,7 +538,7 @@ public class Stan {
         for(int i=0; i<App.liczbagraczy; i++){
             if((App.gracze[i] != g) && App.gracze[i].zakupione.contains(polozenie)){
                 komunikaty.infoograczu(App.gracze[i].imie);
-                if(App.gracze[i].zakupione.contains(id2)){
+                if(App.gracze[i].zakupione.contains(polozenie) && App.gracze[i].zakupione.contains(id2)){
                     System.out.println(App.gracze[i].imie + " posiada całą infrastrukture");
                     System.out.println("Płacisz mu 300zł");
                     App.gracze[i].finanse += 300;
@@ -567,7 +567,7 @@ public class Stan {
         for(int i=0; i<App.liczbagraczy; i++){
             if((App.gracze[i] != g) && App.gracze[i].zakupione.contains(polozenie)){
                 komunikaty.infoograczu(App.gracze[i].imie);
-                if(App.gracze[i].zakupione.contains(id2) && App.gracze[i].zakupione.contains(id3) && App.gracze[i].zakupione.contains(id4)){
+                if(App.gracze[i].zakupione.contains(polozenie) && App.gracze[i].zakupione.contains(id2) && App.gracze[i].zakupione.contains(id3) && App.gracze[i].zakupione.contains(id4)){
                     System.out.println(App.gracze[i].imie + " posiada wszystkie koleje");
                     System.out.println("Płacisz mu 400 zł");
                     App.gracze[i].finanse += 400;
@@ -596,7 +596,7 @@ public class Stan {
         for(int i=0; i<App.liczbagraczy; i++){
             if((App.gracze[i] != g) && App.gracze[i].zakupione.contains(id)){
                 komunikaty.infoograczu(App.gracze[i].imie);
-                if(App.gracze[i].zakupione.contains(id2)){
+                if(App.gracze[i].zakupione.contains(id) && App.gracze[i].zakupione.contains(id2)){
                     int ilosc = Collections.frequency(App.gracze[i].wybudowane, nazwa);
                         if(ilosc == 0){
                             System.out.println("Gracz nie ma żadnych budynków tutaj");
@@ -687,7 +687,7 @@ public class Stan {
         for(int i=0; i<App.liczbagraczy; i++) {
             if ((App.gracze[i] != g) && App.gracze[i].zakupione.contains(id)) {
                 komunikaty.infoograczu(App.gracze[i].imie);
-                if (App.gracze[i].zakupione.contains(id2) && App.gracze[i].zakupione.contains(id3)) {
+                if (App.gracze[i].zakupione.contains(id) && App.gracze[i].zakupione.contains(id2) && App.gracze[i].zakupione.contains(id3)) {
                     int ilosc = Collections.frequency(App.gracze[i].wybudowane, nazwa);
                         if (ilosc == 0) {
                             System.out.println("Gracz nie ma żadnych budynków tutaj");

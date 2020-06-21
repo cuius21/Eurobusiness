@@ -12,7 +12,7 @@ public class Gracz {
     public int punkt_startu = 0;
 
     Komunikaty komunikaty = new Komunikaty();
-    Scanner scanner = new Scanner(System.in);
+
     /////////////////////// ruchy ////////////////////////////
     public int polozenie_gracza(int ruch, Gracz gracz){
         if(punkt_startu + ruch > 39){
@@ -58,6 +58,7 @@ public class Gracz {
     public boolean decyzje_kupna_domu(){
         System.out.println(" ");
         komunikaty.zacheta_domu();
+        Scanner scanner = new Scanner(System.in);
         String decyzja = scanner.nextLine();
         while(!(decyzja.equals("t") || decyzja.equals("T") || decyzja.equals("n") || decyzja.equals("N"))){
             System.out.println("Nie podałeś poprawnej akcji, spróbuj wpisać ponownie");
@@ -71,6 +72,7 @@ public class Gracz {
     public int decyzja_ile(){
         System.out.println("Możliwości");
         komunikaty.info_ile_domkow();
+        Scanner scanner = new Scanner(System.in);
         int decyzja = scanner.nextInt();
         while(!(decyzja == 1 || decyzja == 2 || decyzja == 3)){
             System.out.println("Nie podałeś poprawnej akcji, spróbuj wpisać ponownie");
@@ -88,10 +90,10 @@ public class Gracz {
     public void posiadlosc_kraj(){
         if(zakupione.contains(1) && zakupione.contains(3)){
             System.out.println("Posiadasz Grecję");
-            decyzje_kupna_domu();
-            if(decyzje_kupna_domu()){
-                decyzja_ile();
-                if(decyzja_ile() == 1){
+            boolean dkd = decyzje_kupna_domu();
+            if(dkd){
+                int di = decyzja_ile();
+                if(di == 1){
                     System.out.println("W Salonikach czy Atenach? wybierz S lub A");
                     Scanner s = new Scanner(System.in);
                     String odp = s.nextLine();
@@ -132,7 +134,7 @@ public class Gracz {
                         }
                     }
                 }
-                else if(decyzja_ile() == 2 || decyzja_ile() == 3){
+                else if(di == 2 || decyzja_ile() == 3){
                     if(niemoznosc_kupna_domku("Saloniki")) {
                         if(niemoznosc_kupna_domku("Ateny")) {
                             System.out.println("Domek w Atenach 60zł, w Salonikach 40zł");
@@ -157,10 +159,10 @@ public class Gracz {
         }
         if(zakupione.contains(37) && zakupione.contains(39)){
             System.out.println("Posiadasz Austrie");
-            decyzje_kupna_domu();
-            if(decyzje_kupna_domu()){
-                decyzja_ile();
-                if(decyzja_ile() == 1){
+            boolean dkd = decyzje_kupna_domu();
+            if(dkd){
+                int di = decyzja_ile();
+                if(di == 1){
                     System.out.println("W Insbruku czy Wiedniu? wybierz I lub W");
                     Scanner s = new Scanner(System.in);
                     String odp = s.nextLine();
@@ -201,7 +203,7 @@ public class Gracz {
                         }
                     }
                 }
-                else if(decyzja_ile() == 2 || decyzja_ile() == 3){
+                else if(di == 2 || decyzja_ile() == 3){
                     if(niemoznosc_kupna_domku("Insbruk")) {
                         if (niemoznosc_kupna_domku("Wieden")) {
                             System.out.println("Domek we Wiedniu 400zł, w Insbruku 300zł");
@@ -226,10 +228,10 @@ public class Gracz {
         }
         if(zakupione.contains(6) && zakupione.contains(8) && zakupione.contains(9)){
             System.out.println("Posiadasz Włochy");
-            decyzje_kupna_domu();
-            if(decyzje_kupna_domu()){
-                decyzja_ile();
-                if(decyzja_ile() == 1){
+            boolean dkd = decyzje_kupna_domu();
+            if(dkd){
+                int di = decyzja_ile();
+                if(di == 1){
                     System.out.println("W Neapolu, Mediolanie czy Rzymie? wybierz N, M lub R");
                     Scanner s = new Scanner(System.in);
                     String odp = s.nextLine();
@@ -283,7 +285,7 @@ public class Gracz {
                         }
                     }
                 }
-                else if(decyzja_ile() == 3){
+                else if(di == 3){
                     if(niemoznosc_kupna_domku("Neapol")) {
                         if(niemoznosc_kupna_domku("Mediolan")) {
                             if(niemoznosc_kupna_domku("Rzym")) {
@@ -307,7 +309,7 @@ public class Gracz {
                         System.out.println("Masz już w Neapolu domy wszystkie już");
                     }
                 }
-                else if(decyzja_ile() == 2){
+                else if(di == 2){
                     System.out.println("W których miastach chcesz kupić domy" +
                             " Neapol i Mediolan, Neapol i Rzym czy Mediolan i Rzym? Wybierz NM lub NR lub MR");
                     Scanner sc = new Scanner(System.in);
@@ -378,10 +380,10 @@ public class Gracz {
         }
         if(zakupione.contains(11) && zakupione.contains(13) && zakupione.contains(14)){
             System.out.println("Posiadasz Hiszpanie");
-            decyzje_kupna_domu();
-            if(decyzje_kupna_domu()){
-                decyzja_ile();
-                if(decyzja_ile() == 1){
+            boolean dkd = decyzje_kupna_domu();
+            if(dkd){
+                int di = decyzja_ile();
+                if(di == 1){
                     System.out.println("W Barcelonie, Sewilli czy Madrycie? wybierz B, S lub M");
                     Scanner s = new Scanner(System.in);
                     String odp = s.nextLine();
@@ -435,7 +437,7 @@ public class Gracz {
                         }
                     }
                 }
-                else if(decyzja_ile() == 3){
+                else if(di == 3){
                     if(niemoznosc_kupna_domku("Barcelona")) {
                         if(niemoznosc_kupna_domku("Sewilla")) {
                             if(niemoznosc_kupna_domku("Madryt")) {
@@ -459,7 +461,7 @@ public class Gracz {
                         System.out.println("Masz już w Barcelonie domy wszystkie już");
                     }
                 }
-                else if(decyzja_ile() == 2){
+                else if(di == 2){
                     System.out.println("W których miastach chcesz kupić domy" +
                             " Barcelona i Sewilla, Barcelona i Madryt czy Sewilla i Madryt? Wybierz BS lub BM lub SM");
                     Scanner sc = new Scanner(System.in);
@@ -530,10 +532,10 @@ public class Gracz {
         }
         if(zakupione.contains(16) && zakupione.contains(18) && zakupione.contains(19)){
             System.out.println("Posiadasz Wielką Brytanie");
-            decyzje_kupna_domu();
-            if(decyzje_kupna_domu()){
-                decyzja_ile();
-                if(decyzja_ile() == 1){
+            boolean dkd = decyzje_kupna_domu();
+            if(dkd){
+                int di = decyzja_ile();
+                if(di == 1){
                     System.out.println("W Liverpoolu, Glasgow czy Londynie? wybierz L, G lub Lon");
                     Scanner s = new Scanner(System.in);
                     String odp = s.nextLine();
@@ -587,7 +589,7 @@ public class Gracz {
                         }
                     }
                 }
-                else if(decyzja_ile() == 3){
+                else if(di == 3){
                     if(niemoznosc_kupna_domku("Liverpool")) {
                         if(niemoznosc_kupna_domku("Glasgow")) {
                             if(niemoznosc_kupna_domku("Londyn")) {
@@ -611,7 +613,7 @@ public class Gracz {
                         System.out.println("Masz już w Liverpoolu domy wszystkie już");
                     }
                 }
-                else if(decyzja_ile() == 2){
+                else if(di == 2){
                     System.out.println("W których miastach chcesz kupić domy" +
                             " Liverpool i Glasgow, Liverpool i Londyn czy Glasgow i Londyn? Wybierz LG lub LL lub GL");
                     Scanner sc = new Scanner(System.in);
@@ -682,10 +684,10 @@ public class Gracz {
         }
         if(zakupione.contains(21) && zakupione.contains(23) && zakupione.contains(24)){
             System.out.println("Posiadasz Państwa Beneluxu");
-            decyzje_kupna_domu();
-            if(decyzje_kupna_domu()){
-                decyzja_ile();
-                if(decyzja_ile() == 1){
+            boolean dkd = decyzje_kupna_domu();
+            if(dkd){
+                int di = decyzja_ile();
+                if(di == 1){
                     System.out.println("W Rotterdamie, Brukseli czy Amsterdamie? wybierz R, B lub A");
                     Scanner s = new Scanner(System.in);
                     String odp = s.nextLine();
@@ -739,7 +741,7 @@ public class Gracz {
                         }
                     }
                 }
-                else if(decyzja_ile() == 3){
+                else if(di == 3){
                     if(niemoznosc_kupna_domku("Rotterdam")) {
                         if(niemoznosc_kupna_domku("Bruksela")) {
                             if(niemoznosc_kupna_domku("Amsterdam")) {
@@ -763,7 +765,7 @@ public class Gracz {
                         System.out.println("Masz już w Rotterdamie domy wszystkie już");
                     }
                 }
-                else if(decyzja_ile() == 2){
+                else if(di == 2){
                     System.out.println("W których miastach chcesz kupić domy" +
                             " Rotterdam i Bruksela, Rotterdam i Amsterdam czy Bruksela i Amsterdam? Wybierz RB lub RA lub BA");
                     Scanner sc = new Scanner(System.in);
@@ -834,10 +836,10 @@ public class Gracz {
         }
         if(zakupione.contains(26) && zakupione.contains(27) && zakupione.contains(29)){
             System.out.println("Posiadasz Szwecje");
-            decyzje_kupna_domu();
-            if(decyzje_kupna_domu()){
-                decyzja_ile();
-                if(decyzja_ile() == 1){
+            boolean dkd = decyzje_kupna_domu();
+            if(dkd){
+                int di = decyzja_ile();
+                if(di == 1){
                     System.out.println("W Malmo, Goteborgu czy Sztokholmie? wybierz M, G lub S");
                     Scanner s = new Scanner(System.in);
                     String odp = s.nextLine();
@@ -891,7 +893,7 @@ public class Gracz {
                         }
                     }
                 }
-                else if(decyzja_ile() == 3){
+                else if(di == 3){
                     if(niemoznosc_kupna_domku("Malmo")) {
                         if(niemoznosc_kupna_domku("Goteborg")) {
                             if(niemoznosc_kupna_domku("Sztokholm")) {
@@ -915,7 +917,7 @@ public class Gracz {
                         System.out.println("Masz już w Malmo domy wszystkie już");
                     }
                 }
-                else if(decyzja_ile() == 2){
+                else if(di == 2){
                     System.out.println("W których miastach chcesz kupić domy" +
                             " Malmo i Goteborg, Malmo i Sztokholm czy Goteborg i Sztokholm? Wybierz MG lub MS lub GS");
                     Scanner sc = new Scanner(System.in);
@@ -986,10 +988,10 @@ public class Gracz {
         }
         if(zakupione.contains(31) && zakupione.contains(32) && zakupione.contains(34)){
             System.out.println("Posiadasz Niemcy");
-            decyzje_kupna_domu();
-            if(decyzje_kupna_domu()){
-                decyzja_ile();
-                if(decyzja_ile() == 1){
+            boolean dkd = decyzje_kupna_domu();
+            if(dkd){
+                int di = decyzja_ile();
+                if(di == 1){
                     System.out.println("We Frankfurcie, Kolonii czy Berlinie? wybierz F, K lub B");
                     Scanner s = new Scanner(System.in);
                     String odp = s.nextLine();
@@ -1043,7 +1045,7 @@ public class Gracz {
                         }
                     }
                 }
-                else if(decyzja_ile() == 3){
+                else if(di == 3){
                     if(niemoznosc_kupna_domku("Frankfurt")) {
                         if(niemoznosc_kupna_domku("Kolonia")) {
                             if(niemoznosc_kupna_domku("Berlin")) {
@@ -1067,7 +1069,7 @@ public class Gracz {
                         System.out.println("Masz już we Frankfurcie domy wszystkie już");
                     }
                 }
-                else if(decyzja_ile() == 2){
+                else if(di == 2){
                     System.out.println("W których miastach chcesz kupić domy" +
                             " Frankfurt i Kolonia, Frankfurt i Berlin czy Kolonia i Berlin? Wybierz FK lub FB lub KB");
                     Scanner sc = new Scanner(System.in);

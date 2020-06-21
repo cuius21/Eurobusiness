@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Eurobussiness:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Eurobussiness_jar</output-path>
+    <root id="archive" name="Eurobussiness.jar">
+      <element id="module-output" name="Eurobussiness" />
+    </root>
+  </artifact>
+</component>

@@ -612,7 +612,7 @@ public class Stan {
                         }
                         else if(ilosc == 1){
                             System.out.println("Gracz ma teren z 1 zabudową");
-                            System.out.println("Płacisz graczowi "+ dom+100+"zł");
+                            System.out.println("Płacisz graczowi "+ (dom+100)+"zł");
                             App.gracze[i].finanse += (dom + 100);
                             if (g.finanse > dom + 100) {
                                 g.finanse -= (dom + 100);
@@ -624,7 +624,7 @@ public class Stan {
                         }
                         else if(ilosc == 2){
                             System.out.println("Gracz ma teren z 2 domami");
-                            System.out.println("Płacisz graczowi "+dom + 140+ "zł");
+                            System.out.println("Płacisz graczowi "+(dom + 140)+ "zł");
                             App.gracze[i].finanse += (dom + 140);
                             if(g.finanse > (dom+ 140)) {
                                 g.finanse -= (dom + 140);
@@ -636,7 +636,7 @@ public class Stan {
                         }
                         else if(ilosc == 3){
                             System.out.println("Gracz ma teren z 3 domami");
-                            System.out.println("Płacisz graczowi " + dom + 300 +"zł");
+                            System.out.println("Płacisz graczowi " + (dom + 300) +"zł");
                             App.gracze[i].finanse += (dom+300);
                             if(g.finanse > dom+300) {
                                 g.finanse -= (dom+300);
@@ -648,7 +648,7 @@ public class Stan {
                         }
                         else if(ilosc == 4){
                             System.out.println("Gracz ma teren z 4 domami");
-                            System.out.println("Płacisz graczowi "+dom+600+"zł");
+                            System.out.println("Płacisz graczowi "+(dom+600)+"zł");
                             App.gracze[i].finanse += (dom+600);
                             if(g.finanse > dom+600) {
                                 g.finanse -= (dom + 600);
@@ -660,7 +660,7 @@ public class Stan {
                         }
                         else if(ilosc == 5){
                             System.out.println("Gracz ma teren z 1 hotelem");
-                            System.out.println("Płacisz graczowi "+dom+900+"zł");
+                            System.out.println("Płacisz graczowi "+(dom+900)+"zł");
                             App.gracze[i].finanse += (dom+900);
                             if(g.finanse > (dom+900)) {
                                 g.finanse -= (dom+900);
@@ -701,7 +701,7 @@ public class Stan {
                             }
                         } else if (ilosc == 1) {
                             System.out.println("Gracz ma teren z 1 zabudową");
-                            System.out.println("Płacisz graczowi " + dom + 100 + "zł");
+                            System.out.println("Płacisz graczowi " + (dom + 100) + "zł");
                             App.gracze[i].finanse += (dom + 100);
                             if (g.finanse > dom + 100) {
                                 g.finanse -= (dom + 100);
@@ -711,7 +711,7 @@ public class Stan {
                             }
                         } else if (ilosc == 2) {
                             System.out.println("Gracz ma teren z 2 domami");
-                            System.out.println("Płacisz graczowi " + dom + 140 + "zł");
+                            System.out.println("Płacisz graczowi " + (dom + 140) + "zł");
                             App.gracze[i].finanse += (dom + 140);
                             if (g.finanse > (dom + 140)) {
                                 g.finanse -= (dom + 140);
@@ -721,7 +721,7 @@ public class Stan {
                             }
                         } else if (ilosc == 3) {
                             System.out.println("Gracz ma teren z 3 domami");
-                            System.out.println("Płacisz graczowi " + dom + 300 + "zł");
+                            System.out.println("Płacisz graczowi " + (dom + 300) + "zł");
                             App.gracze[i].finanse += (dom + 300);
                             if (g.finanse > dom + 300) {
                                 g.finanse -= (dom + 300);
@@ -731,7 +731,7 @@ public class Stan {
                             }
                         } else if (ilosc == 4) {
                             System.out.println("Gracz ma teren z 4 domami");
-                            System.out.println("Płacisz graczowi " + dom + 600 + "zł");
+                            System.out.println("Płacisz graczowi " + (dom + 600) + "zł");
                             App.gracze[i].finanse += (dom + 600);
                             if (g.finanse > dom + 600) {
                                 g.finanse -= (dom + 600);
@@ -741,7 +741,7 @@ public class Stan {
                             }
                         } else if (ilosc == 5) {
                             System.out.println("Gracz ma teren z 1 hotelem");
-                            System.out.println("Płacisz graczowi " + dom + 900+"zł");
+                            System.out.println("Płacisz graczowi " + (dom + 900)+"zł");
                             App.gracze[i].finanse += (dom + 900);
                             if (g.finanse > (dom + 900)) {
                                 g.finanse -= (dom + 900);

@@ -367,6 +367,9 @@ public class Plansza {
         else if(x == 14){
             hiszpanskie[2].kupione = true;
         }
+        else if(x == 15){
+            kolejki[1].kupione = true;
+        }
         else if(x == 16){
             brytyjskie[0].kupione = true;
         }
@@ -384,6 +387,9 @@ public class Plansza {
         }
         else if(x == 24){
             beneluxu[2].kupione = true;
+        }
+        else if(x == 25){
+            kolejki[2].kupione = true;
         }
         else if(x == 26){
             szwedzkie[0].kupione = true;
@@ -405,6 +411,9 @@ public class Plansza {
         }
         else if(x == 34){
             niemieckie[2].kupione = true;
+        }
+        else if(x == 35){
+            kolejki[3].kupione = true;
         }
         else if(x == 37){
             austriackie[0].kupione = true;

@@ -103,7 +103,7 @@ public class Stan {
                     System.out.println("Do skarbca trafiło 100 zł");
                 }
                 else{
-                    System.out.println("koniec gry");
+                    System.out.println("koniec gry " + g.imie+" przegrywa"); 
                     App.zaczynajacy = -1;
                 }
                 break;
@@ -267,7 +267,7 @@ public class Stan {
                     g.finanse -= 50;
                 }
                 else{
-                    System.out.println("koniec gry");
+                    System.out.println("koniec gry " + g.imie+" przegrywa"); 
                     App.zaczynajacy = -1;
                 }
                 break;
@@ -460,7 +460,7 @@ public class Stan {
                     System.out.println("Pieniądze trafiły do skarbca");
                 }
                 else{
-                    System.out.println("Koniec gry");
+                    System.out.println("koniec gry " + g.imie+" przegrywa"); 
                     App.zaczynajacy = -1;
                 }
                 break;
@@ -514,7 +514,7 @@ public class Stan {
                     System.out.println("Skarbiec wzbogacił się o 200zł");
                 }
                 else {
-                    System.out.println("Koniec gry");
+                    System.out.println("koniec gry " + g.imie+" przegrywa"); 
                     App.zaczynajacy = -1;
                 }
                 break;
@@ -545,7 +545,7 @@ public class Stan {
                     if(g.finanse > 300){
                         g.finanse -= 300;
                     }else {
-                        System.out.println("Koniec gry");
+                        System.out.println("koniec gry " + g.imie+" przegrywa"); 
                         App.zaczynajacy = -1;
                     }
                 }
@@ -556,7 +556,7 @@ public class Stan {
                         g.finanse -= 80;
                     }
                     else{
-                        System.out.println("Koniec gry");
+                        System.out.println("koniec gry " + g.imie+" przegrywa"); 
                         App.zaczynajacy = -1;
                     }
                 }
@@ -574,7 +574,7 @@ public class Stan {
                     if(g.finanse > 400){
                         g.finanse -= 400;
                     }else{
-                        System.out.println("koniec gry");
+                        System.out.println("koniec gry " + g.imie+" przegrywa"); 
                         App.zaczynajacy = -1;
                     }
                 }
@@ -585,7 +585,7 @@ public class Stan {
                         g.finanse -= 100;
                     }
                     else{
-                        System.out.println("koniec gry");
+                        System.out.println("koniec gry " + g.imie+" przegrywa"); 
                         App.zaczynajacy = -1;
                     }
                 }
@@ -606,7 +606,7 @@ public class Stan {
                                 g.finanse -= dom;
                             }
                             else{
-                                System.out.println("koniec gry!");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         }
@@ -618,7 +618,7 @@ public class Stan {
                                 g.finanse -= (dom + 100);
                             }
                             else{
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         }
@@ -630,7 +630,7 @@ public class Stan {
                                 g.finanse -= (dom + 140);
                             }
                             else{
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         }
@@ -642,7 +642,7 @@ public class Stan {
                                 g.finanse -= (dom+300);
                             }
                             else{
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         }
@@ -654,7 +654,7 @@ public class Stan {
                                 g.finanse -= (dom + 600);
                             }
                             else{
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         }
@@ -665,7 +665,7 @@ public class Stan {
                             if(g.finanse > (dom+900)) {
                                 g.finanse -= (dom+900);
                             }else{
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         }
@@ -676,7 +676,7 @@ public class Stan {
                         g.finanse -= dom;
                     }
                     else{
-                        System.out.println("koniec gry");
+                        System.out.println("koniec gry " + g.imie+" przegrywa"); 
                         App.zaczynajacy = -1;
                     }
                 }
@@ -696,7 +696,7 @@ public class Stan {
                             if (g.finanse > dom) {
                                 g.finanse -= dom;
                             } else {
-                                System.out.println("koniec gry!");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         } else if (ilosc == 1) {
@@ -706,7 +706,7 @@ public class Stan {
                             if (g.finanse > dom + 100) {
                                 g.finanse -= (dom + 100);
                             } else {
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         } else if (ilosc == 2) {
@@ -716,7 +716,7 @@ public class Stan {
                             if (g.finanse > (dom + 140)) {
                                 g.finanse -= (dom + 140);
                             } else {
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         } else if (ilosc == 3) {
@@ -726,7 +726,7 @@ public class Stan {
                             if (g.finanse > dom + 300) {
                                 g.finanse -= (dom + 300);
                             } else {
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         } else if (ilosc == 4) {
@@ -736,7 +736,7 @@ public class Stan {
                             if (g.finanse > dom + 600) {
                                 g.finanse -= (dom + 600);
                             } else {
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         } else if (ilosc == 5) {
@@ -746,7 +746,7 @@ public class Stan {
                             if (g.finanse > (dom + 900)) {
                                 g.finanse -= (dom + 900);
                             } else {
-                                System.out.println("koniec gry");
+                                System.out.println("koniec gry " + g.imie+" przegrywa"); 
                                 App.zaczynajacy = -1;
                             }
                         }
@@ -756,7 +756,7 @@ public class Stan {
                     if (g.finanse > dom) {
                         g.finanse -= dom;
                     } else {
-                        System.out.println("koniec gry");
+                        System.out.println("koniec gry " + g.imie+" przegrywa"); 
                         App.zaczynajacy = -1;
                     }
                 }

@@ -41,7 +41,7 @@ public class Gracz {
 
     public boolean niemoznosc_kupna_domku(String nazwa){
         int krotnosc = Collections.frequency(wybudowane, nazwa);
-        
+
         if(krotnosc < 5){
             return true;
         }
